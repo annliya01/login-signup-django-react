@@ -30,7 +30,6 @@ export const Register = () => {
       });
 
       console.log(response.data);
-      alert('Registration successful!');
       navigate('/login');
     } catch (error) {
       if (error.response.status === 400 && error.response.data.username) {
