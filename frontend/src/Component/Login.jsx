@@ -22,7 +22,6 @@ export const Login = () => {
       localStorage.setItem('access_token', response.data.access);
       localStorage.setItem('refresh_token', response.data.refresh);
       axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.access}`;
-      alert("Login Successful!")
       navigate('/home'); 
     }
   } catch (error) {
