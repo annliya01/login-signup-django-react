@@ -14,11 +14,11 @@ class RegisterSerializer(serializers.ModelSerializer):
         return data
 
     def create(self, validated_data):
-        validated_data.pop('password2')  # Remove password2 as it's not needed anymore
+        validated_data.pop('password2') 
         user = User(
             username=validated_data['username'],
             email=validated_data['email'],
         )
-        user.set_password(validated_data['password'])  # ✅ Uses Django's built-in password hashing
+        user.set_password(validated_data['password']) 
         user.save()
         return user
